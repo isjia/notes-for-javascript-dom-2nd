@@ -1,8 +1,8 @@
 # 读书笔记：JavaScript DOM编程艺术 （第2版）
 
-[JavaScript DOM编程艺术 (第2版)](http://book.douban.com/subject/6038371/)的读书笔记，发布在 [github](http://isjia.github.io/notes-for-javascript-dom-2nd/), powered by [gitbook](https://isjia.gitbooks.io/)。
-
 ![cover](http://img3.douban.com/lpic/s4677623.jpg)
+
+[JavaScript DOM编程艺术 (第2版)](http://book.douban.com/subject/6038371/)的读书笔记，发布在 [github](http://isjia.github.io/notes-for-javascript-dom-2nd/), powered by [gitbook](https://isjia.gitbooks.io/)。
 
 ## 序言
 本书重点介绍了集中最有用的DOM方法和属性，精华在于讲解JavaScript和DOM脚本编程工作的基本原则、良好习惯和正确思路。本书强调**最佳实践**，特别是**渐进增强**。本书涉及领域：
