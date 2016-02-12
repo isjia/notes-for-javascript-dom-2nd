@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Javascript 简史 | 读书笔记：JavaScript DOM编程艺术 （第2版）</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./02 Javascript 语法.html" />
+    
+    
+    <link rel="prev" href="./00 序言.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2"
+        data-chapter-title="Javascript 简史"
+        data-filepath="01 Javascript 简史.md"
+        data-basepath="."
+        data-revision="Fri Feb 12 2016 23:34:17 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="00 序言.html">
+            
+                
+                    <a href="./00 序言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        序言
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="01 Javascript 简史.html">
+            
+                
+                    <a href="./01 Javascript 简史.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Javascript 简史
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="02 Javascript 语法.html">
+            
+                
+                    <a href="./02 Javascript 语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Javascript 语法
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >读书笔记：JavaScript DOM编程艺术 （第2版）</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="01-javascript-&#x7B80;&#x53F2;">01 Javascript &#x7B80;&#x53F2;</h1>
+<h2 id="javascript&#x7684;&#x8D77;&#x6E90;">Javascript&#x7684;&#x8D77;&#x6E90;</h2>
+<ul>
+<li>Javascript&#x662F;Netscape&#x548C;Sun&#x5408;&#x4F5C;&#x5F00;&#x53D1;&#x7684;</li>
+<li>&#x589E;&#x52A0;&#x4E86;&#x53EF;&#x4EA4;&#x4E92;&#x6027;</li>
+<li>Javascript 1.0 &#x51FA;&#x73B0;&#x5728;1995&#x5E74;&#xFF0C;Netscape 2.0 &#x6D4F;&#x89C8;&#x5668;&#x4E2D;</li>
+<li>Javascript &#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F; ECMAScript&#xFF0C;&#x540C;&#x4E00;&#x8BED;&#x8A00;&#x7684;&#x4E0D;&#x540C;&#x540D;&#x5B57;</li>
+<li>Javascript&#x4E0E;Java&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8054;&#x7CFB;</li>
+<li>&#x4E00;&#x79CD;&#x811A;&#x672C;&#x8BED;&#x8A00;&#xFF0C;&#x7531; Web &#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x884C;&#x89E3;&#x91CA;&#x6267;&#x884C;</li>
+<li>&#x53EA;&#x80FD;&#x5E94;&#x7528;&#x4E8E; Web &#x6D4F;&#x89C8;&#x5668;</li>
+<li>BOM &#x6D4F;&#x89C8;&#x5668;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8C03;&#x7528;&#x6574;&#x4E2A;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x7684;&#x9AD8;&#x5EA6;&#x3001;&#x5BBD;&#x5EA6;&#x548C;&#x4F4D;&#x7F6E;&#x5C5E;&#x6027;</li>
+</ul>
+<h2 id="dom">DOM</h2>
+<ul>
+<li>Document Object Model &#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;</li>
+<li>DOM&#x662F;&#x4E00;&#x5957;&#x5BF9;&#x6587;&#x6863;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x62BD;&#x8C61;&#x548C;&#x6982;&#x5FF5;&#x5316;&#x7684;&#x65B9;&#x6CD5;</li>
+<li>DOM &#x662F;&#x4E00;&#x79CD;API</li>
+</ul>
+<h2 id="&#x6D4F;&#x89C8;&#x5668;&#x6218;&#x4E89;">&#x6D4F;&#x89C8;&#x5668;&#x6218;&#x4E89;</h2>
+<ul>
+<li>DHTML</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x95F4;&#x7684;&#x4E0D;&#x517C;&#x5BB9;&#x95EE;&#x9898;&#x5BFC;&#x81F4;&#x5BF9;DOM&#x64CD;&#x4F5C;&#x7684;&#x5DEE;&#x5F02;</li>
+</ul>
+<h2 id="&#x5236;&#x5B9A;&#x6807;&#x51C6;">&#x5236;&#x5B9A;&#x6807;&#x51C6;</h2>
+<ul>
+<li>W3C&#x5BF9;DOM&#x7684;&#x5B9A;&#x4E49;&#x662F;&#xFF1A;&#x4E00;&#x4E2A;&#x4E0E;&#x7CFB;&#x7EDF;&#x5E73;&#x53F0;&#x548C;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x65E0;&#x5173;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x7A0B;&#x5E8F;&#x548C;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x52A8;&#x6001;&#x5730;&#x8BBF;&#x95EE;&#x548C;&#x4FEE;&#x6539;&#x6587;&#x6863;&#x7684;&#x5185;&#x5BB9;&#x3001;&#x7ED3;&#x6784;&#x548C;&#x6837;&#x5F0F;&#x3002;</li>
+<li><a href="https://webkit.org" target="_blank">WebKit</a>&#xFF1A;Safari&#x3001;Chrome&#xFF0C;&#x5F00;&#x6E90;&#x5F15;&#x64CE;</li>
+<li>Gecko&#xFF1A;Firfox&#xFF0C;&#x5F00;&#x6E90;&#x5F15;&#x64CE;</li>
+<li>&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x5BF9;DOM&#x7279;&#x6027;&#x7684;&#x8986;&#x76D6;&#x7387;&#x90FD;&#x57FA;&#x672C;&#x8FBE;&#x5230;95%</li>
+</ul>
+<h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
+<ul>
+<li>DOM&#x811A;&#x672C;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x4F7F;&#x7528;W3C DOM&#x6765;&#x5904;&#x7406;&#x6587;&#x6863;&#x548C;&#x6837;&#x5F0F;&#x8868;</li>
+<li>DOM&#x811A;&#x672C;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x6DB5;&#x76D6;&#x4E86;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x4E00;&#x79CD;&#x652F;&#x6301;DOM API&#x7684;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x8BED;&#x8A00;&#x53BB;&#x5904;&#x7406;&#x4EFB;&#x4F55;&#x4E00;&#x79CD;&#x6807;&#x8BB0;&#x6587;&#x6863;&#x7684;&#x60C5;&#x51B5;&#x3002;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./00 序言.html" class="navigation navigation-prev " aria-label="Previous page: 序言"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./02 Javascript 语法.html" class="navigation navigation-next " aria-label="Next page: Javascript 语法"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
