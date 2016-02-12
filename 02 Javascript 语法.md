@@ -101,45 +101,97 @@ if (condition) {
 ## 循环语句
 
 ### while 循环
-
+只要给定条件的求值结果是true，包含在花括号里的代码就将**反复地**执行下去。
+while循环的内部**必须**发生一些会影响循环控制条件的事情。
+语法如下：
 ```javascript
 while (condition) {
   statements;
 }
 ```
 
-- do...while
+### do...while 循环
 
-```
+对循环控制条件的求值发生在每次循环结束之后，因此循环语句内的代码**至少执行一次**
+语法如下：
+```javascript
 do {
   statements;
 } while (condition);
 ```
 
-- for
-
-```
+### for 循环
+for循环结构清晰，与循环有关的所有内容都包含在for语句的圆括号部分。
+语法如下：
+```javascript
 for (initial condition; test condition; alter condition) {
   statements;
 }
 ```
 
-### 函数
+## 函数 function
+函数（function）就是一组允许在代码里随时调用的语句。
 
-```
+> 好习惯：应该先对函数做出定义再调用他们。
+
+语法如下：
+```javascript
 function name(arguments) {
   statements;
 }
 ```
-- 变量的作用域
-  - 全局变量：作用域为整个脚本
-  - 局部变量：作用于声明他的那个函数内部
+例子1：
+```javascript
+function multiply(num1, num2) {
+  var total = num1 * num2;
+  return total;
+}
+```
+
+例子2:
+```javascript
+function convertToCelsius(temp) {
+  var result = temp - 32;
+  result = result / 1.8;
+  return result;
+}
+```
+
+> 函数的真正价值自在于我们可以把他们当做一种数据类型来使用，可以把一个函数的调用结果赋给一个变量；
+例如：
+```javascript
+var temp_fahrenheit = 95;
+var temp_celsius = convertToCelsius(temp_fahrenheit);
+```
+
+### 变量的作用域 scope
+
+- 全局变量（global variable）：可以在脚本中的任何位置被引用，包括函数内，作用域为整个脚本
+- 局部变量（local variable）：作用于声明他的那个函数内部，在那个函数的外部无法引用他。如果在函数中使用了`var`那么这个变量将被视为一个局部变量。反之如果没有使用`var`，那么这个变量将被视为一个全局变量，如果脚本里已经存在一个与之同名的全局变量，这个函数就会改变那个全局变量的值。
   
-### 对象
+## 对象 Object
+对象是自包含数据集合，包含在对象中的数据可以通过两种形式访问：
+- 属性 property：隶属于某个特定对象的变量；
+- 方法 method：只有某个特定对象才能调用的函数；
+- 他们都用 `.` 的语法来访问：`Object.property`, `Object.method()`；
+
+### 创建实例（instance）
 - 包含属性和方法：`var jenny = new Person;`
-- 内建对象：Math(), Array(), Date()
-- 宿主对象：Form, Image, Element, document
+- `jenny.age`
+- `jenny.mood`
+
+### 内建对象：
+- Math(), Array(), Date()
+- `var beatles = new Array();`
+- `beatles.length`
+- `var num = Math.round(7.561);`
+- `var today = current_date.getDay();`
+
+### 宿主对象
+- 这些对象是有他的运行环境提供的，具体到web应用，这个环境就是浏览器。由浏览器提供的预定义对象被称为宿主对象（host object）；
+- 包括：Form, Image, Element, document等
 
 ## 小结
-## ToDo List
-- [ ] 找到作者[第一版的附录](http://www.ituring.com.cn/book/42)
+- Javascript语言的基础知识：语句、变量、数组、函数等
+- 对象的概念
+- 作者[第一版的附录](http://www.ituring.com.cn/book/42)
