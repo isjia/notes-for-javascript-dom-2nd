@@ -1,4 +1,6 @@
-My Awesome Book
+# 读书笔记：JavaScript DOM编程艺术 （第2版）
 =======
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+[JavaScript DOM编程艺术 (第2版)](http://book.douban.com/subject/6038371/)的读书笔记，发布在 [gitbook](https://isjia.gitbooks.io/notes-for-javascript-dom-2nd/content/)。
+
+![cover](http://img3.douban.com/lpic/s4677623.jpg)
