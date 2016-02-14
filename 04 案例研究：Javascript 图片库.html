@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>案例研究：Javascript 图片库 | 读书笔记：JavaScript DOM编程艺术 （第2版）</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="./03 DOM.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4"
+        data-chapter-title="案例研究：Javascript 图片库"
+        data-filepath="04 案例研究：Javascript 图片库.md"
+        data-basepath="."
+        data-revision="Sun Feb 14 2016 12:57:31 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01 Javascript 简史.html">
+            
+                
+                    <a href="./01 Javascript 简史.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Javascript 简史
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02 Javascript 语法.html">
+            
+                
+                    <a href="./02 Javascript 语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Javascript 语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03 DOM.html">
+            
+                
+                    <a href="./03 DOM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        DOM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4" data-path="04 案例研究：Javascript 图片库.html">
+            
+                
+                    <a href="./04 案例研究：Javascript 图片库.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        案例研究：Javascript 图片库
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >读书笔记：JavaScript DOM编程艺术 （第2版）</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="04-&#x6848;&#x4F8B;&#x7814;&#x7A76;&#xFF1A;javascript-&#x56FE;&#x7247;&#x5E93;">04 &#x6848;&#x4F8B;&#x7814;&#x7A76;&#xFF1A;Javascript &#x56FE;&#x7247;&#x5E93;</h1>
+<h2 id="&#x6807;&#x8BB0;">&#x6807;&#x8BB0;</h2>
+<p>&#x7F16;&#x5199;&#x4E00;&#x4E2A;HTML page &#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Image Gallery<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Snapshots<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/fireworks.jpg&quot;</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;A fireworks display&quot;</span>&gt;</span>Fireworks<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/coffee.jpg&quot;</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;A cup of black coffee&quot;</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/rose.jpg&quot;</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;A red, red rose&quot;</span>&gt;</span>Rose<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/bigben.jpg&quot;</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;The famous clock&quot;</span>&gt;</span>Big Ben<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/placeholder.gif&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;my image gallery&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;placeholder&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<h2 id="javascript">Javascript</h2>
+<h3 id="&#x975E;-dom-&#x89E3;&#x51B3;&#x65B9;&#x6848;">&#x975E; DOM &#x89E3;&#x51B3;&#x65B9;&#x6848;</h3>
+<p>&#x7565;</p>
+<h3 id="&#x6700;&#x7EC8;&#x7684;&#x51FD;&#x6570;&#x4EE3;&#x7801;&#x6E05;&#x5355;">&#x6700;&#x7EC8;&#x7684;&#x51FD;&#x6570;&#x4EE3;&#x7801;&#x6E05;&#x5355;</h3>
+<p>showPic.js &#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showPic</span>(<span class="hljs-params">whichpic</span>) </span>{
+  <span class="hljs-keyword">var</span> source = whichpic.getAttribute(<span class="hljs-string">&quot;href&quot;</span>);
+  <span class="hljs-keyword">var</span> placeholder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;placeholder&quot;</span>);
+  placeholder.setAttribute(<span class="hljs-string">&quot;src&quot;</span>, source);
+}
+</code></pre>
+<h2 id="&#x5E94;&#x7528;&#x8FD9;&#x4E2A;-javascript-&#x51FD;&#x6570;">&#x5E94;&#x7528;&#x8FD9;&#x4E2A; Javascript &#x51FD;&#x6570;</h2>
+<p>&#x5728; <code>gallery.html</code> &#x7684; <code>&lt;/body&gt;</code> &#x6807;&#x7B7E;&#x524D;&#x589E;&#x52A0;&#xFF1A;</p>
+<pre><code class="lang-js">&lt;script src=<span class="hljs-string">&quot;scripts/showPic.js&quot;</span> type=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</span></code></pre>
+<h3 id="&#x4E8B;&#x4EF6;&#x5904;&#x7406;">&#x4E8B;&#x4EF6;&#x5904;&#x7406;</h3>
+<ul>
+<li>&#x4F7F;&#x7528; <code>this</code> &#x5173;&#x952E;&#x5B57;&#x4EE3;&#x8868;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;</li>
+<li>&#x6DFB;&#x52A0;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;<code>event = &quot;Javascript statement(s)&quot;</code> &#xFF0C;&#x6CE8;&#x610F;&#x4EE3;&#x7801;&#x5305;&#x542B;&#x5728;&#x4E00;&#x5BF9;&#x5F15;&#x53F7;&#x4E4B;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;Javascript&#x8BED;&#x53E5;&#x653E;&#x5728;&#x8FD9;&#x5BF9;&#x5F15;&#x53F7;&#x4E4B;&#x95F4;&#xFF0C;&#x5404;&#x8BED;&#x53E5;&#x4E4B;&#x95F4;&#x7528;&#x5206;&#x53F7;&#x9694;&#x5F00;&#xFF1B;&#x4F8B;&#x5982;&#xFF1A;<code>onclick = &quot;showPic(this)&quot;;</code></li>
+<li>&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#xFF1A;&#x6DFB;&#x52A0; <code>onclick</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE; <code>false</code>, &#x8FD9;&#x6837;onclick&#x7684;&#x9ED8;&#x8BA4;&#x4E8B;&#x4EF6;&#x5C31;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;<code>&lt;a href=&quot;images/fireworks.jpg&quot; title=&quot;A fireworks display&quot; onclick=&quot;return false;&quot;&gt;Fireworks&lt;/a&gt;</code></li>
+</ul>
+<p>&#x5728; HTML &#x4E2D;&#x6DFB;&#x52A0; <code>onclick</code> &#x4E8B;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/fireworks.jpg&quot;</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;A fireworks display&quot;</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">&quot;showPic(this); return false;&quot;</span>&gt;</span>Fireworks<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<h2 id="&#x5BF9;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6269;&#x5C55;">&#x5BF9;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6269;&#x5C55;</h2>
+<p>&#x5B9E;&#x73B0;&#x5728;&#x663E;&#x793A;&#x56FE;&#x7247;&#x7684;&#x540C;&#x65F6;&#x663E;&#x793A;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x672C;(text)&#x3002;</p>
+<h3 id="childnodes-&#x5C5E;&#x6027;">childNodes &#x5C5E;&#x6027;</h3>
+<p>&#x5728;&#x4E00;&#x68F5;&#x8282;&#x70B9;&#x6570;&#x4E0A;&#xFF0C;childNodes &#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x83B7;&#x53D6;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x6240;&#x6709;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x4ED6;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x5168;&#x90E8;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x6570;&#x7EC4;&#xFF1A;<code>element.childNodes</code>&#xFF0C;&#x7531; childNodes &#x5C5E;&#x6027;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x7EC4;&#x5305;&#x542B;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">countBodyChildren</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> body_element = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;body&quot;</span>)[<span class="hljs-number">0</span>];
+  alert (body_element.childNodes.length);
+}
+</code></pre>
+<h3 id="nodetype-&#x5C5E;&#x6027;">nodeType &#x5C5E;&#x6027;</h3>
+<ul>
+<li>&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x6709; nodeType &#x5C5E;&#x6027;</li>
+<li>&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684; nodeType &#x5C5E;&#x6027;&#xFF1A;<code>node.noteType</code></li>
+<li>nodeType &#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>nodeType &#x5C5E;&#x6027;&#x603B;&#x5171;&#x6709; 12 &#x79CD;&#x53EF;&#x53D6;&#x6570;&#x503C;&#xFF0C;&#x5176;&#x4E2D;&#x4EC5;&#x6709; 3 &#x79CD;&#x5177;&#x6709;&#x4F7F;&#x7528;&#x4EF7;&#x503C;&#xFF1A;<ul>
+<li>&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF1A;1</li>
+<li>&#x5C5E;&#x6027;&#x8282;&#x70B9;&#xFF1A;2</li>
+<li>&#x6587;&#x672C;&#x8282;&#x70B9;&#xFF1A;3</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5728;-html-&#x4E2D;&#x589E;&#x52A0;&#x6587;&#x672C;&#x7684;&#x5360;&#x4F4D;&#x7B26;&#xFF1A;">&#x5728; HTML &#x4E2D;&#x589E;&#x52A0;&#x6587;&#x672C;&#x7684;&#x5360;&#x4F4D;&#x7B26;&#xFF1A;</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;description&quot;</span>&gt;</span>Choose an image.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<h3 id="&#x7528;javascript-&#x83B7;&#x53D6;&#x8FD9;&#x6BB5;text">&#x7528;javascript &#x83B7;&#x53D6;&#x8FD9;&#x6BB5;text</h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showPic</span>(<span class="hljs-params">whichpic</span>) </span>{
+  <span class="hljs-keyword">var</span> source = whichpic.getAttribute(<span class="hljs-string">&quot;href&quot;</span>);
+  <span class="hljs-keyword">var</span> placeholder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;placeholder&quot;</span>);
+  placeholder.setAttribute(<span class="hljs-string">&quot;src&quot;</span>, source);
+  <span class="hljs-keyword">var</span> text = whichpic.getAttribute(<span class="hljs-string">&quot;title&quot;</span>);
+  <span class="hljs-keyword">var</span> description = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;description&quot;</span>);
+}
+</code></pre>
+<h3 id="nodevalue-&#x5C5E;&#x6027;">nodeValue &#x5C5E;&#x6027;</h3>
+<ul>
+<li>&#x7528;&#x6765;&#x5F97;&#x5230;&#x548C;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x503C;&#xFF1A;<code>node.nodeValue</code></li>
+<li><code>description.childNodes[0].nodeValue</code> // &#x83B7;&#x53D6; <code>&lt;p&gt;</code> &#x5143;&#x7D20;&#x4E2D;text value</li>
+</ul>
+<h3 id="firstchild-&#x548C;-lastchild-&#x5C5E;&#x6027;">firstChild &#x548C; lastChild &#x5C5E;&#x6027;</h3>
+<ul>
+<li>node.firstChild &#x7B49;&#x4EF7;&#x4E8E; node.childNodes[0]</li>
+<li>node.lastChild &#x4EE3;&#x8868; childNode &#x6570;&#x7EC4;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; node.childNodes[node.childNode.length-1]</li>
+</ul>
+<h3 id="&#x5229;&#x7528;-nodevalue-&#x5C5E;&#x6027;&#x5237;&#x65B0;&#x63CF;&#x8FF0;">&#x5229;&#x7528; nodeValue &#x5C5E;&#x6027;&#x5237;&#x65B0;&#x63CF;&#x8FF0;</h3>
+<p>&#x66F4;&#x65B0;&#x540E;&#x7684;js&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showPic</span>(<span class="hljs-params">whichpic</span>) </span>{
+  <span class="hljs-keyword">var</span> source = whichpic.getAttribute(<span class="hljs-string">&quot;href&quot;</span>);
+  <span class="hljs-keyword">var</span> placeholder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;placeholder&quot;</span>);
+  placeholder.setAttribute(<span class="hljs-string">&quot;src&quot;</span>, source);
+  <span class="hljs-keyword">var</span> text = whichpic.getAttribute(<span class="hljs-string">&quot;title&quot;</span>);
+  <span class="hljs-keyword">var</span> description = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;description&quot;</span>);
+  description.firstChild.nodeValue = text;
+}
+</code></pre>
+<h3 id="&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x6837;&#x5F0F;">&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x6837;&#x5F0F;</h3>
+<p>styles/layou.css</p>
+<pre><code class="lang-css"><span class="hljs-tag">body</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">&quot;Helvetica&quot;</span>, <span class="hljs-string">&quot;Arial&quot;</span>, serif</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#333</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#ccc</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">1em</span> <span class="hljs-number">10%</span></span></span>;
+}</span>
+<span class="hljs-tag">h1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#333</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> transparent</span></span>;
+}</span>
+<span class="hljs-tag">a</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#c60</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> transparent</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
+}</span>
+<span class="hljs-tag">ul</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+}</span>
+<span class="hljs-tag">li</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> left</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">1em</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value"> none</span></span>;
+}</span>
+<span class="hljs-tag">img</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">clear</span>:<span class="hljs-value"> both</span></span>;
+}</span>
+</code></pre>
+<h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
+<ul>
+<li>childNodes</li>
+<li>nodeType</li>
+<li>nodeValue</li>
+<li>firstChild</li>
+<li>lastChild</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./03 DOM.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: DOM"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
