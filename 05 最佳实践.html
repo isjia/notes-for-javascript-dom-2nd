@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>最佳实践 | 读书笔记：JavaScript DOM编程艺术 （第2版）</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="./04 案例研究：Javascript 图片库.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5"
+        data-chapter-title="最佳实践"
+        data-filepath="05 最佳实践.md"
+        data-basepath="."
+        data-revision="Mon Feb 15 2016 14:20:35 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01 Javascript 简史.html">
+            
+                
+                    <a href="./01 Javascript 简史.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Javascript 简史
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02 Javascript 语法.html">
+            
+                
+                    <a href="./02 Javascript 语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Javascript 语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03 DOM.html">
+            
+                
+                    <a href="./03 DOM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        DOM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="04 案例研究：Javascript 图片库.html">
+            
+                
+                    <a href="./04 案例研究：Javascript 图片库.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        案例研究：Javascript 图片库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5" data-path="05 最佳实践.html">
+            
+                
+                    <a href="./05 最佳实践.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        最佳实践
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >读书笔记：JavaScript DOM编程艺术 （第2版）</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="05-&#x6700;&#x4F73;&#x5B9E;&#x8DF5;">05 &#x6700;&#x4F73;&#x5B9E;&#x8DF5;</h1>
+<h2 id="&#x5E73;&#x7A33;&#x9000;&#x5316;">&#x5E73;&#x7A33;&#x9000;&#x5316;</h2>
+<p>&#x7F51;&#x7AD9;&#x7684;&#x8BBF;&#x95EE;&#x8005;&#x6709;&#x80AF;&#x80FD;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E0D;&#x652F;&#x6301; Javascript &#x7684;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x6216;&#x8005;&#x7528;&#x6237;&#x7981;&#x7528;&#x4E86; Javascript&#x3002;</p>
+<p>&#x5E73;&#x7A33;&#x9000;&#x5316;&#xFF08;graceful degratdation&#xFF09;&#xFF1A;&#x867D;&#x7136;&#x67D0;&#x4E9B;&#x529F;&#x80FD;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x6700;&#x57FA;&#x672C;&#x7684;&#x64CD;&#x4F5C;&#x4ECD;&#x80FD;&#x987A;&#x5229;&#x5B8C;&#x6210;&#x3002;</p>
+<p>Javascript &#x4F7F;&#x7528; window &#x5BF9;&#x8C61;&#x7684; open() &#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#xFF0C;<code>window.open(url, name, features)</code>&#xFF0C;&#x8FD9;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;</p>
+<ul>
+<li>&#x65B0;&#x7A97;&#x53E3;&#x4E2D;&#x7F51;&#x9875;&#x7684;url&#x5730;&#x5740;&#xFF0C;&#x5982;&#x679C;&#x7701;&#x7565;&#x5219;&#x5F39;&#x51FA;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x7A97;&#x53E3;&#x3002;</li>
+<li>&#x65B0;&#x7A97;&#x53E3;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#x4E0E;&#x65B0;&#x7A97;&#x53E3;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;</li>
+<li>&#x4EE5;&#x90FD;&#x597D;&#x5206;&#x9694;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5B9A;&#x4E49;&#x65B0;&#x7A97;&#x53E3;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x5BBD;&#x3001;&#x9AD8;&#x3001;&#x5DE5;&#x5177;&#x6761;&#x7B49;&#xFF0C;&#x539F;&#x5219;&#xFF1A;&#x65B0;&#x7A97;&#x53E3;&#x7684;&#x529F;&#x80FD;&#x8981;&#x5C11;&#x800C;&#x7CBE;&#x3002;</li>
+<li>&#x4E3E;&#x4F8B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">popUp</span>(<span class="hljs-params">winURL</span>) </span>{
+  <span class="hljs-built_in">window</span>.open(winURL, <span class="hljs-string">&quot;popup&quot;</span>, <span class="hljs-string">&quot;width = 30, height = 40&quot;</span>);
+}
+</code></pre>
+<h3 id="javascript-&#x4F2A;&#x534F;&#x8BAE;">&quot;javascript&quot; &#x4F2A;&#x534F;&#x8BAE;</h3>
+<p>&#x5728; HTML &#x6587;&#x6863;&#x91CC;&#x901A;&#x8FC7; &#x201C;javascript:&#x201D; &#x4F2A;&#x534F;&#x8BAE;&#x8C03;&#x7528; Javascript &#x4EE3;&#x7801;&#x7684;&#x505A;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span> = &quot;<span class="hljs-attribute">javascript:popUp</span>(&apos;<span class="hljs-attribute">http:</span>//<span class="hljs-attribute">www.example.com</span>/&apos;);&quot;&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<h3 id="&#x5185;&#x5D4C;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;">&#x5185;&#x5D4C;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;</h3>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span> = &quot;#&quot; <span class="hljs-attribute">onclick</span> = &quot;<span class="hljs-attribute">popUp</span>(&apos;<span class="hljs-attribute">http:</span>//<span class="hljs-attribute">www.example.com</span>/&apos;); 
+<span class="hljs-attribute">return</span> <span class="hljs-attribute">false</span>;&quot;&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<h3 id="&#x8C01;&#x5173;&#x7CFB;&#x8FD9;&#x4E2A;">&#x8C01;&#x5173;&#x7CFB;&#x8FD9;&#x4E2A;</h3>
+<p>&#x53EA;&#x6709;&#x5C11;&#x6570;&#x7684;&#x641C;&#x7D22;&#x673A;&#x5668;&#x4EBA;&#x80FD;&#x591F;&#x7406;&#x89E3; Javascript &#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x7F51;&#x9875;&#x4E0D;&#x80FD;&#x5E73;&#x7A33;&#x9000;&#x5316;&#xFF0C;&#x4ED6;&#x5728;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x7684;&#x6392;&#x540D;&#x5C31;&#x53EF;&#x80FD;&#x53D7;&#x5230;&#x4F24;&#x5BB3;&#x3002;
+&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span> = &quot;<span class="hljs-attribute">http:</span>//<span class="hljs-attribute">www.example.com</span>/&quot; <span class="hljs-attribute">onclick</span> = &quot;<span class="hljs-attribute">popUp</span>(&apos;<span class="hljs-attribute">http:</span>//<span class="hljs-attribute">www.example.com</span>/&apos;); 
+<span class="hljs-attribute">return</span> <span class="hljs-attribute">false</span>;&quot;&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>&#x4F18;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span> = &quot;<span class="hljs-attribute">http:</span>//<span class="hljs-attribute">www.example.com</span>/&quot; <span class="hljs-attribute">onclick</span> = &quot;<span class="hljs-attribute">popUp</span>(<span class="hljs-attribute">this.getAttribut</span>(&quot;<span class="hljs-attribute">href</span>&quot;); 
+<span class="hljs-attribute">return</span> <span class="hljs-attribute">false</span>;&quot;&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>&#x518D;&#x4F18;&#x5316;&#xFF1A;&#x4F7F;&#x7528;DOM&#x7684; this.href &#x5C5E;&#x6027;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span> = &quot;<span class="hljs-attribute">http:</span>//<span class="hljs-attribute">www.example.com</span>/&quot; <span class="hljs-attribute">onclick</span> = &quot;<span class="hljs-attribute">popUp</span>(<span class="hljs-attribute">this.href</span>); 
+<span class="hljs-attribute">return</span> <span class="hljs-attribute">false</span>;&quot;&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x5373;&#x4F7F; Javascript &#x88AB;&#x7981;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x9047;&#x5230;&#x641C;&#x7D22;&#x673A;&#x5668;&#xFF0C;&#x8FD9;&#x4E2A;&#x94FE;&#x63A5;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7ECF;&#x5178;&#x7684;&#x5E73;&#x7A33;&#x9000;&#x5316;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x628A;&#x5305;&#x62EC;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5728;&#x5185;&#x7684;&#x6240;&#x6709; Javascript &#x4EE3;&#x7801;&#x5168;&#x90E8;&#x653E;&#x5728;&#x5916;&#x90E8;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x6280;&#x5DE7;&#x5C06;&#x66F4;&#x52A0;&#x5B8C;&#x7F8E;&#x3002;</p>
+<h2 id="&#x5411;-css-&#x5B66;&#x4E60;">&#x5411; CSS &#x5B66;&#x4E60;</h2>
+<ul>
+<li>&#x7ED3;&#x6784;&#x4E0E;&#x6837;&#x5F0F;&#x7684;&#x5206;&#x79BB;</li>
+<li>&#x6E10;&#x8FDB;&#x589E;&#x5F3A;&#xFF1A;&#x6240;&#x8C13;&#x201C;&#x6E10;&#x8FDB;&#x589E;&#x5F3A;&#x201D;&#x5C31;&#x662F;&#x7528;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x4FE1;&#x606F;&#x5C42;&#x53BB;&#x5305;&#x88F9;&#x539F;&#x59CB;&#x6570;&#x636E;&#x3002;CSS &#x4EE3;&#x7801;&#x8D1F;&#x8D23;&#x63D0;&#x4F9B;&#x5173;&#x4E8E;&#x201C;&#x8868;&#x793A;&#x201C;&#x7684;&#x4FE1;&#x606F;&#xFF0C;Javascript &#x4EE3;&#x7801;&#x8D1F;&#x8D23;&#x63D0;&#x4F9B;&#x5173;&#x4E8E;&#x201D;&#x884C;&#x4E3A;&#x201C;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+<h2 id="&#x5206;&#x79BB;-javascript">&#x5206;&#x79BB; Javascript</h2>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x5728;&#x5916;&#x90E8; Javascript &#x6587;&#x4EF6;&#x91CC;&#x628A;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x6DFB;&#x52A0;&#x5230; HTML &#x6587;&#x6863;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x4E0A;&#xFF1A;
+<code>element.event = action...</code></p>
+<p>&#x628A;&#x65F6;&#x95F4;&#x6DFB;&#x52A0;&#x5230;&#x6709;&#x7740;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#x7684;&#x4E00;&#x7EC4;&#x5143;&#x7D20;&#x4E0A;&#xFF0C;&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x628A;&#x6587;&#x6863;&#x91CC;&#x7684;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#x5168;&#x90E8;&#x653E;&#x5165;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x91CC;&#xFF1B;</li>
+<li>&#x904D;&#x5386;&#x6570;&#x7EC4;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x94FE;&#x63A5;&#x7684; class &#x5C5E;&#x6027;&#x7B49;&#x4E8E; popUp &#xFF0C;&#x5C31;&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x94FE;&#x63A5;&#x518D;&#x88AB;&#x70B9;&#x51FB;&#x65F6;&#x5E94;&#x8BE5;&#x8C03;&#x7528; popUp() &#x51FD;&#x6570;&#xFF1B;</li>
+</ol>
+<p>&#x4F18;&#x5316; HTML</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span> = &quot;<span class="hljs-attribute">http:</span>//<span class="hljs-attribute">www.exmaple.com</span>&quot; <span class="hljs-attribute">class</span> = &quot;<span class="hljs-attribute">popUp</span>&quot;&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+</code></pre>
+<p>&#x4F18;&#x5316; Javascript</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> links = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;a&quot;</span>); <span class="hljs-comment">// &#x8FD9;&#x4E00;&#x53E5;&#x9700;&#x8981;&#x5728;&#x6587;&#x4EF6;&#x88AB;&#x52A0;&#x8F7D;&#x65F6;&#x7ACB;&#x5373;&#x6267;&#x884C;</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; links.length; i++) {
+  <span class="hljs-keyword">if</span> (links[i].getAttribute(<span class="hljs-string">&quot;class&quot;</span>) == <span class="hljs-string">&quot;popup&quot;</span>) {
+    links[i].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      popUp(<span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">&quot;href&quot;</span>));
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+}
+</code></pre>
+<p>&#x5FC5;&#x987B;&#x8BA9;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x5728; HTML &#x6587;&#x6863;&#x5168;&#x90E8;&#x52A0;&#x8F7D;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x4E4B;&#x540E;&#x9A6C;&#x4E0A;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x901A;&#x8FC7; window.onload &#x89E6;&#x53D1;&#xFF0C;&#x4F18;&#x5316;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.onload = prepareLinks;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preparLinks</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> links = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;a&quot;</span>); <span class="hljs-comment">// &#x8FD9;&#x4E00;&#x53E5;&#x9700;&#x8981;&#x5728;&#x6587;&#x4EF6;&#x88AB;&#x52A0;&#x8F7D;&#x65F6;&#x7ACB;&#x5373;&#x6267;&#x884C;</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; links.length; i++) {
+    <span class="hljs-keyword">if</span> (links[i].getAttribute(<span class="hljs-string">&quot;class&quot;</span>) == <span class="hljs-string">&quot;popup&quot;</span>) {
+      links[i].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        popUp(<span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">&quot;href&quot;</span>));
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+      }
+    }
+  }
+}
+</code></pre>
+<h2 id="&#x5411;&#x540E;&#x517C;&#x5BB9;">&#x5411;&#x540E;&#x517C;&#x5BB9;</h2>
+<h3 id="&#x5BF9;&#x8C61;&#x68C0;&#x6D4B;">&#x5BF9;&#x8C61;&#x68C0;&#x6D4B;</h3>
+<p>&#x4F8B;&#x5982;,&#x8981;&#x4F7F;&#x7528; getElementById() &#x65B9;&#x6CD5;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8C03;&#x7528;&#x524D;&#x8FDB;&#x884C;&#x68C0;&#x6D4B; getElementById&#xFF0C;&#x6CE8;&#x610F;&#x68C0;&#x6D4B;&#x65F6;&#x53BB;&#x6389; ()</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFucntion</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.getElementById) {
+    statements using getElementById
+  }
+}
+</code></pre>
+<p>&#x4F18;&#x5316;&#xFF1A;&#x540C;&#x65F6;&#x68C0;&#x6D4B;&#x591A;&#x4E2A;&#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span>(!getElementById || getElemntsByTagName) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+</code></pre>
+<p>&#x4F18;&#x5316;&#xFF1A;&#x589E;&#x52A0;&#x68C0;&#x6D4B;&#xFF0C;&#x786E;&#x4FDD;&#x5411;&#x540E;&#x517C;&#x5BB9;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.onload = prepareLinks;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preparLinks</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (!docuemnt.getElementsByTagName) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  <span class="hljs-keyword">var</span> links = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;a&quot;</span>); <span class="hljs-comment">// &#x8FD9;&#x4E00;&#x53E5;&#x9700;&#x8981;&#x5728;&#x6587;&#x4EF6;&#x88AB;&#x52A0;&#x8F7D;&#x65F6;&#x7ACB;&#x5373;&#x6267;&#x884C;</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; links.length; i++) {
+    <span class="hljs-keyword">if</span> (links[i].getAttribute(<span class="hljs-string">&quot;class&quot;</span>) == <span class="hljs-string">&quot;popup&quot;</span>) {
+      links[i].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        popUp(<span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">&quot;href&quot;</span>));
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="&#x6D4F;&#x89C8;&#x5668;&#x55C5;&#x63A2;&#x6280;&#x672F;-brower-sniffung">&#x6D4F;&#x89C8;&#x5668;&#x55C5;&#x63A2;&#x6280;&#x672F; brower sniffung</h3>
+<h2 id="&#x6027;&#x80FD;&#x8003;&#x8651;">&#x6027;&#x80FD;&#x8003;&#x8651;</h2>
+<h3 id="&#x5C3D;&#x91CF;&#x5C11;&#x8BBF;&#x95EE;-dom-&#x548C;&#x5C3D;&#x91CF;&#x5C11;&#x6807;&#x8BB0;">&#x5C3D;&#x91CF;&#x5C11;&#x8BBF;&#x95EE; DOM &#x548C;&#x5C3D;&#x91CF;&#x5C11;&#x6807;&#x8BB0;</h3>
+<ul>
+<li>&#x53EA;&#x8981;&#x662F;&#x67E5;&#x8BE2; DOM &#x4E2D;&#x7684;&#x67D0;&#x4E9B;&#x5143;&#x7D20;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4F1A;&#x641C;&#x7D22;&#x6574;&#x4E2A; DOM &#x6811;&#xFF0C;&#x4ECE;&#x4E2D;&#x67E5;&#x627E;&#x53EF;&#x80FD;&#x5339;&#x914D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x66F4;&#x597D;&#x7684;&#x529E;&#x6CD5;&#x662F;&#x628A;&#x7B2C;&#x4E00;&#x6B21;&#x641C;&#x7D22;&#x7684;&#x7ED3;&#x679C;&#x4FDD;&#x6301;&#x5728;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x4E2D;&#xFF0C;&#x91CD;&#x7528;&#x8BE5;&#x7ED3;&#x679C;&#x3002;</li>
+<li>&#x5C3D;&#x91CF;&#x51CF;&#x5C11; HTML &#x6587;&#x6863;&#x4E2D;&#x6807;&#x7B7E;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5143;&#x7D20;&#x4F1A;&#x589E;&#x52A0; DOM &#x6811;&#x7684;&#x89C4;&#x6A21;&#xFF0C;&#x589E;&#x52A0;&#x904D;&#x5386; DOM &#x6811;&#x67E5;&#x627E;&#x7279;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x65F6;&#x95F4;&#x3002;</li>
+</ul>
+<h3 id="&#x5408;&#x5E76;&#x548C;&#x653E;&#x7F6E;&#x811A;&#x672C;">&#x5408;&#x5E76;&#x548C;&#x653E;&#x7F6E;&#x811A;&#x672C;</h3>
+<ul>
+<li>&#x5305;&#x542B;&#x811A;&#x672C;&#x7684;&#x6700;&#x4F73;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x5F97; js &#x4E0E; HTML &#x80FD;&#x6E05;&#x6670;&#x5730;&#x5206;&#x79BB;&#x5F00;&#xFF0C;&#x4E14;&#x6D4F;&#x89C8;&#x5668;&#x80FD;&#x5BF9;&#x7AD9;&#x70B9;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x9875;&#x9762;&#x91CD;&#x7528;&#x7F13;&#x5B58;&#x8FC7;&#x7684;&#x76F8;&#x540C;&#x811A;&#x672C;&#x3002;</li>
+<li>&#x5C06;&#x8FC7;&#x4E2A; js &#x811A;&#x672C;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x51CF;&#x5C11;&#x52A0;&#x8F7D;&#x9875;&#x9762;&#x65F6;&#x53D1;&#x9001;&#x5230;&#x8BF7;&#x6C42;&#x6570;&#x3002;<strong>&#x51CF;&#x5C11;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&#x662F;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x65F6;&#x9996;&#x5148;&#x8981;&#x8003;&#x8651;&#x7684;&#x3002;</strong></li>
+<li>&#x811A;&#x672C;&#x5728; HTML &#x6587;&#x6863;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x5BF9;&#x9875;&#x9762;&#x521D;&#x6B21;&#x52A0;&#x8F7D;&#x65F6;&#x95F4;&#x6709;&#x5F88;&#x5927;&#x5F71;&#x54CD;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x811A;&#x672C;&#x653E;&#x5728;&#x6587;&#x6863;&#x5C3E;&#x90E8; <code>&lt;/body&gt;</code> &#x6807;&#x7B7E;&#x4E4B;&#x524D;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x9875;&#x9762;&#x53D8;&#x5F97;&#x66F4;&#x5FEB;&#x3002;&#x5728;&#x52A0;&#x8F7D;&#x811A;&#x672C;&#x65F6;&#xFF0C;window &#x5BF9;&#x8C61;&#x7684; load &#x4E8B;&#x4EF6;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5BF9;&#x6587;&#x6863;&#x8FDB;&#x884C;&#x7684;&#x5404;&#x79CD;&#x64CD;&#x4F5C;&#x3002;</li>
+</ul>
+<h3 id="&#x538B;&#x7F29;&#x811A;&#x672C;">&#x538B;&#x7F29;&#x811A;&#x672C;</h3>
+<p>&#x901A;&#x8FC7;&#x628A;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5B57;&#x8282;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x7A7A;&#x683C;&#x3001;&#x6CE8;&#x91CA;&#x7EDF;&#x7EDF;&#x5220;&#x9664;&#xFF0C;&#x4ECE;&#x800C;&#x8FBE;&#x5230;&#x201C;&#x538B;&#x7F29;&#x201D;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x52A0;&#x5FEB;&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#x3002;&#x901A;&#x5E38;&#x5E94;&#x8BE5;&#x6709;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x811A;&#x672C;&#xFF1A;&#x4E00;&#x4E2A;&#x662F;&#x5DE5;&#x4F5C;&#x526F;&#x672C;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x7CBE;&#x7B80;&#x526F;&#x672C;&#xFF08;&#x6700;&#x597D;&#x5728;&#x6587;&#x4EF6;&#x540D;&#x4E2D;&#x52A0;&#x4E0A;min&#x5B57;&#x6837;&#xFF09;&#x3002;&#x63A8;&#x8350;&#x7684;&#x4EE3;&#x7801;&#x538B;&#x7F29;&#x5DE5;&#x5177;&#xFF1A;</p>
+<ul>
+<li>Douglas Crockford&#x7684; JSMin</li>
+<li>&#x96C5;&#x864E;&#x7684; YUI Compressor</li>
+<li>Google &#x7684; Closure Compiler</li>
+</ul>
+<h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
+<ul>
+<li>&#x5E73;&#x7A33;&#x9000;&#x5316;</li>
+<li>&#x5206;&#x79BB; Javascript</li>
+<li>&#x5411;&#x540E;&#x517C;&#x5BB9;</li>
+<li>&#x6027;&#x80FD;&#x8003;&#x8651;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./04 案例研究：Javascript 图片库.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 案例研究：Javascript 图片库"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
