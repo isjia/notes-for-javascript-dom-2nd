@@ -51,7 +51,7 @@
         data-chapter-title="充实文档的内容"
         data-filepath="08 充实文档的内容.md"
         data-basepath="."
-        data-revision="Thu Feb 18 2016 20:36:54 GMT+0800 (CST)"
+        data-revision="Fri Feb 19 2016 15:00:22 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -425,7 +425,69 @@ header.appendChild(header_text);
 }
 </code></pre>
 <h2 id="&#x663E;&#x793A;&#x5FEB;&#x6377;&#x952E;&#x6E05;&#x5355;">&#x663E;&#x793A;&#x5FEB;&#x6377;&#x952E;&#x6E05;&#x5355;</h2>
-<p>accesskey &#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6BD4;&#x5982;&#x94FE;&#x63A5;&#xFF0C;&#x4E0E;&#x952E;&#x76D8;&#x4E0A;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x6309;&#x952E;&#x5173;&#x8054;&#x8D77;&#x6765;&#xFF1A;<code>&lt;a href=&quot;index.htm&quot; accesskey=&quot;1&quot;&gt;Home&lt;/a&gt;</code>&#xFF0C;&#x5173;&#x4E8E;<a href="http://www.clagnut.com/blog/193" target="_blank">&#x5FEB;&#x6377;&#x952E;&#x7684;&#x7EA6;&#x5B9A;&#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;&#x53C2;&#x8003;</a></p>
+<p>accesskey &#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6BD4;&#x5982;&#x94FE;&#x63A5;&#xFF0C;&#x4E0E;&#x952E;&#x76D8;&#x4E0A;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x6309;&#x952E;&#x5173;&#x8054;&#x8D77;&#x6765;&#xFF1A;<code>&lt;a href=&quot;index.htm&quot; accesskey=&quot;1&quot;&gt;Home&lt;/a&gt;</code>&#xFF0C;&#x5173;&#x4E8E;<a href="http://www.clagnut.com/blog/193" target="_blank">&#x5FEB;&#x6377;&#x952E;&#x7684;&#x7EA6;&#x5B9A;&#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;&#x53C2;&#x8003;</a>
+&#x7ED9;&#x7F51;&#x7AD9;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x952E;&#x6E05;&#x5355;&#xFF08;accessibility statement&#xFF09;&#xFF0C;&#x5217;&#x660E;&#x8BE5;&#x7F51;&#x7AD9;&#x652F;&#x6301;&#x54EA;&#x4E9B;&#x5FEB;&#x6377;&#x952E;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;navigation&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;index.html&quot;</span> <span class="hljs-attribute">accesskey</span>=<span class="hljs-value">&quot;1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;search.html&quot;</span> <span class="hljs-attribute">accesskey</span>=<span class="hljs-value">&quot;4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;contact.html&quot;</span> <span class="hljs-attribute">accesskey</span>=<span class="hljs-value">&quot;9&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>&#x7F16;&#x5199; displayAccessKeys &#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">displayAccessKeys</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">document</span>.getElementsByTagName ||
+      !<span class="hljs-built_in">document</span>.createElement ||
+      !<span class="hljs-built_in">document</span>.createTextNode) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+  <span class="hljs-comment">// &#x53D6;&#x5F97;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x94FE;&#x63A5;</span>
+  <span class="hljs-keyword">var</span> links = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;a&quot;</span>);
+  <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7528;&#x6765;&#x5B58;&#x653E;&#x8BBF;&#x95EE;&#x952E;</span>
+  <span class="hljs-keyword">var</span> aKeys = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>();
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; links.length; i++) {
+    <span class="hljs-keyword">var</span> current_link = links[i];
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x6CA1;&#x6709; accesskey attribute&#xFF0C;&#x5FAA;&#x73AF;&#x7EE7;&#x7EED;</span>
+    <span class="hljs-keyword">if</span> (!current_link.getAttribute(<span class="hljs-string">&quot;accesskey&quot;</span>)) <span class="hljs-keyword">continue</span>;
+
+    <span class="hljs-keyword">var</span> key = current_link.getAttribute(<span class="hljs-string">&quot;accesskey&quot;</span>);
+    <span class="hljs-keyword">var</span> text = current_link.lastChild.nodeValue;
+    aKeys[key] = text;
+  }
+  <span class="hljs-comment">// &#x521B;&#x5EFA;&#x5217;&#x8868;</span>
+  <span class="hljs-keyword">var</span> list = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;ul&quot;</span>);
+  <span class="hljs-keyword">for</span> (key <span class="hljs-keyword">in</span> aKeys) {
+    <span class="hljs-keyword">var</span> text = aKeys[key];
+    <span class="hljs-keyword">var</span> str = key + <span class="hljs-string">&quot;: &quot;</span> + text;
+    <span class="hljs-keyword">var</span> item = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;li&quot;</span>);
+    <span class="hljs-keyword">var</span> item_text = <span class="hljs-built_in">document</span>.createTextNode(str);
+    item.appendChild(item_text);
+    list.appendChild(item);
+  }
+  <span class="hljs-keyword">var</span> header = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;h3&quot;</span>);
+  <span class="hljs-keyword">var</span> header_text = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">&quot;Accesskeys&quot;</span>);
+  header.appendChild(header_text);
+
+  <span class="hljs-built_in">document</span>.body.appendChild(header);
+  <span class="hljs-built_in">document</span>.body.appendChild(list)
+}
+addLoadEvent(displayAccessKeys);
+</code></pre>
+<h2 id="&#x68C0;&#x7D22;&#x548C;&#x6DFB;&#x52A0;&#x4FE1;&#x606F;">&#x68C0;&#x7D22;&#x548C;&#x6DFB;&#x52A0;&#x4FE1;&#x606F;</h2>
+<p>&#x5E38;&#x7528;&#x7684;&#x83B7;&#x53D6; DOM &#x5143;&#x7D20;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>getElementById</li>
+<li>getElementsByTagName</li>
+<li>getAttribute</li>
+</ul>
+<p>&#x5E38;&#x7528;&#x7684;&#x521B;&#x5EFA; DOM &#x5143;&#x7D20;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>createElement</li>
+<li>createTextNode</li>
+<li>appendChild</li>
+<li>insertBefore</li>
+<li>setAttribute</li>
+</ul>
+<h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
 
                     
                     </section>
