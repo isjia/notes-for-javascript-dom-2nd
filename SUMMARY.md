@@ -9,3 +9,4 @@
 * [动态创建标记](07 动态创建标记.md)
 * [充实文档的内容](08 充实文档的内容.md)
 * [CSS-DOM](09 CSS-DOM.md)
+* [用 Javascript 实现动画效果](10 用 Javascript 实现动画效果.md)
