@@ -1,5 +1,3 @@
-# 04 案例研究：Javascript 图片库
-
 ## 标记
 
 编写一个HTML page 如下：

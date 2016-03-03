@@ -1,5 +1,3 @@
-# 03 DOM
-
 ## 文档：DOM中的“D”
 
 D = document

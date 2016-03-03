@@ -1,5 +1,3 @@
-# 02 Javascript 语法
-
 ## 准备工作
 - 方法1：将 Javascript 代码放到文档`<head>`标签中`<script>`的标签之间
 - 方法2：将 Javascript 代码存为一个扩展名为`.js`的独立文件，并把`<script>`的`src属性`指向该文件。

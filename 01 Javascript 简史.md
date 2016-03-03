@@ -1,5 +1,3 @@
-# 01 Javascript 简史
-
 ## Javascript的起源
 - Javascript是Netscape和Sun合作开发的
 - 增加了可交互性
